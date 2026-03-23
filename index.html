@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty Addict Abuja | Premium Beauty & Hair Studio</title>
+  <meta name="description" content="Abuja's premier beauty destination for luxurious hair styling, makeup, and skincare treatments. Book your appointment today.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl3jN-kA7SIi2ZZzqLfM06ffkS5ehJSyebr0Ao_cuciw&sg">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAF7F2',
+            sand: '#F5EDE4',
+            champagne: '#C9A87C',
+            rose: '#D4A5A5',
+            mocha: '#2D2926',
+            charcoal: '#3D3835',
+            warm: '#8B7355',
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    :root {
+      --bg: #FAF7F2;
+      --fg: #2D2926;
+      --muted: #8B7355;
+      --accent: #C9A87C;
+      --card: #FFFFFF;
+      --border: #E8E0D5;
+      --rose: #D4A5A5;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 4px;
+    }
+    
+    /* Typography */
+    .font-display {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    
+    /* Navigation */
+    .nav-blur {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(250, 247, 242, 0.85);
+    }
+    
+    .nav-scrolled {
+      box-shadow: 0 4px 30px rgba(45, 41, 38, 0.08);
+    }
+    
+    /* Hero Pattern */
+    .hero-pattern {
+      background-image: 
+        radial-gradient(circle at 20% 80%, rgba(201, 168, 124, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(212, 165, 165, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(201, 168, 124, 0.08) 0%, transparent 30%);
+    }
+    
+    /* Cards */
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(45, 41, 38, 0.12);
+      border-color: var(--accent);
+    }
+    
+    .service-card:hover .service-icon {
+      transform: scale(1.1);
+      color: var(--accent);
+    }
+    
+    .service-icon {
+      transition: all 0.4s ease;
+    }
+    
+    /* Gallery */
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gallery-item img {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(45, 41, 38, 0.8) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+    
+    /* Testimonial Cards */
+    .testimonial-card {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FDFCFA 100%);
+      border: 1px solid var(--border);
+    }
+    
+    /* Buttons */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent) 0%, #B8976A 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(201, 168, 124, 0.4);
+    }
+    
+    .btn-outline {
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-outline:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    /* Pricing */
+    .pricing-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      transition: all 0.4s ease;
+    }
+    
+    .pricing-card:hover {
+      border-color: var(--accent);
+    }
+    
+    .pricing-featured {
+      background: linear-gradient(135deg, var(--fg) 0%, #1a1816 100%);
+      color: white;
+      transform: scale(1.05);
+      border: none;
+    }
+    
+    .pricing-featured:hover {
+      transform: scale(1.08);
+    }
+    
+    /* Form Inputs */
+    .form-input {
+      background: white;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(201, 168, 124, 0.15);
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+    
+    /* Decorative Elements */
+    .decorative-line {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--rose));
+    }
+    
+    /* Image Placeholders with Real Unsplash Images */
+    .img-hero {
+      background-image: url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    /* Floating Elements */
+    .float-element {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .float-delay-1 { animation-delay: -2s; }
+    .float-delay-2 { animation-delay: -4s; }
+    
+    /* Section Divider */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+    
+    /* Focus States */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2" aria-label="Beauty Addict Abuja Home">
+          <span class="font-display text-2xl font-semibold tracking-tight text-mocha">Beauty Addict</span>
+          <span class="text-champagne text-sm font-medium tracking-widest uppercase hidden sm:block">Abuja</span>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#services" class="text-sm font-medium text-charcoal hover:text-champagne transition-colors">Services</a>
+          <a href="#gallery" class="text-sm font-medium text-charcoal hover:text-champagne transition-colors">Gallery</a>
+          <a href="#pricing" class="text-sm font-medium text-charcoal hover:text-champagne transition-colors">Pricing</a>
+          <a href="#testimonials" class="text-sm font-medium text-charcoal hover:text-champagne transition-colors">Reviews</a>
+          <a href="#contact" class="text-sm font-medium text-charcoal hover:text-champagne transition-colors">Contact</a>
+        </div>
+        
+        <!-- CTA Button -->
+        <div class="hidden md:block">
+          <a href="#contact" class="btn-primary px-6 py-3 rounded-full text-sm font-medium inline-block">
+            Book Appointment
+          </a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button 
+          id="menuBtn" 
+          class="md:hidden p-2 text-mocha"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu fixed inset-y-0 right-0 w-80 max-w-full bg-cream z-50 shadow-2xl md:hidden">
+    <div class="p-6">
+      <div class="flex justify-end mb-8">
+        <button id="closeMenuBtn" class="p-2 text-mocha" aria-label="Close menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-6">
+        <a href="#services" class="text-lg font-medium text-mocha hover:text-champagne transition-colors mobile-link">Services</a>
+        <a href="#gallery" class="text-lg font-medium text-mocha hover:text-champagne transition-colors mobile-link">Gallery</a>
+        <a href="#pricing" class="text-lg font-medium text-mocha hover:text-champagne transition-colors mobile-link">Pricing</a>
+        <a href="#testimonials" class="text-lg font-medium text-mocha hover:text-champagne transition-colors mobile-link">Reviews</a>
+        <a href="#contact" class="text-lg font-medium text-mocha hover:text-champagne transition-colors mobile-link">Contact</a>
+        <a href="#contact" class="btn-primary px-6 py-3 rounded-full text-center font-medium mt-4 mobile-link">
+          Book Appointment
+        </a>
+      </nav>
+    </div>
+  </div>
+  
+  <!-- Mobile Menu Overlay -->
+  <div id="menuOverlay" class="fixed inset-0 bg-mocha/40 z-40 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+
+  <!-- Hero Section -->
+  <header class="min-h-screen flex items-center hero-pattern relative overflow-hidden">
+    <!-- Decorative Elements -->
+    <div class="absolute top-20 right-10 w-72 h-72 bg-champagne/10 rounded-full blur-3xl float-element"></div>
+    <div class="absolute bottom-20 left-10 w-96 h-96 bg-rose/10 rounded-full blur-3xl float-element float-delay-1"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Hero Content -->
+        <div class="order-2 lg:order-1">
+          <div class="reveal">
+            <span class="inline-block px-4 py-2 bg-champagne/10 text-champagne text-sm font-medium rounded-full mb-6">
+              Abuja's Premier Beauty Destination
+            </span>
+          </div>
+          
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium text-mocha leading-tight mb-6 reveal reveal-delay-1">
+            Where Beauty<br>
+            <span class="italic text-champagne">Meets Elegance</span>
+          </h1>
+          
+          <p class="text-lg text-warm max-w-lg mb-8 reveal reveal-delay-2">
+            Experience luxurious hair styling, premium makeup artistry, and rejuvenating skincare treatments at Abuja's most exclusive beauty studio.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 mb-12 reveal reveal-delay-3">
+            <a href="#contact" class="btn-primary px-8 py-4 rounded-full text-center font-medium">
+              Book Your Appointment
+            </a>
+            <a href="#services" class="btn-outline px-8 py-4 rounded-full text-center font-medium">
+              Explore Services
+            </a>
+          </div>
+          
+          <!-- Trust Badges -->
+          <div class="flex flex-wrap items-center gap-8 reveal reveal-delay-4">
+            <div class="flex items-center gap-2">
+              <div class="flex -space-x-2">
+                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=60&h=60&fit=crop&crop=face" alt="" class="w-10 h-10 rounded-full border-2 border-cream object-cover">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop&crop=face" alt="" class="w-10 h-10 rounded-full border-2 border-cream object-cover">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="" class="w-10 h-10 rounded-full border-2 border-cream object-cover">
+              </div>
+              <div class="text-sm">
+                <span class="font-semibold text-mocha">2,500+</span>
+                <span class="text-warm"> Happy Clients</span>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-1">
+              <div class="flex">
+                <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <span class="text-sm font-medium text-mocha">4.9/5</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Hero Image -->
+        <div class="order-1 lg:order-2 relative reveal">
+          <div class="relative">
+            <!-- Main Image -->
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80" 
+                alt="Beautiful hair styling session at Beauty Addict Abuja"
+                class="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover"
+                loading="eager"
+              >
+              <!-- Image Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-mocha/30 to-transparent"></div>
+            </div>
+            
+            <!-- Floating Card -->
+            <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl float-element hidden sm:block">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-champagne/20 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-mocha">Premium Quality</p>
+                  <p class="text-sm text-warm">100% Original Products</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Decorative Circle -->
+            <div class="absolute -top-4 -right-4 w-24 h-24 border-2 border-champagne rounded-full float-element float-delay-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 bg-sand">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- About Image -->
+        <div class="relative reveal">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-4">
+              <img 
+                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80" 
+                alt="Salon interior"
+                class="rounded-2xl h-48 w-full object-cover"
+                loading="lazy"
+              >
+              <img 
+                src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=400&q=80" 
+                alt="Hair styling tools"
+                class="rounded-2xl h-64 w-full object-cover"
+                loading="lazy"
+              >
+            </div>
+            <div class="pt-8">
+              <img 
+                src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&q=80" 
+                alt="Makeup station"
+                class="rounded-2xl h-64 w-full object-cover"
+                loading="lazy"
+              >
+              <!-- <img 
+                src="https://images.unsplash.com/photo-1562322140-8baeacacf35d?w=400&q=80" 
+                alt="Beauty treatment"
+                class="rounded-2xl h-48 w-full object-cover mt-4"
+                loading="lazy"
+              > -->
+            </div>
+          </div>
+          
+          <!-- Decorative Element -->
+          <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-champagne/20 rounded-full -z-10"></div>
+        </div>
+        
+        <!-- About Content -->
+        <div>
+          <div class="decorative-line mb-6 reveal"></div>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-mocha mb-6 reveal reveal-delay-1">
+            Crafting Beauty<br>Since 2018
+          </h2>
+          <p class="text-warm text-lg mb-6 reveal reveal-delay-2">
+            Beauty Addict Abuja was born from a passion for transformation. Our founder, Adaora Nwosu, envisioned a sanctuary where every woman could experience world-class beauty services without leaving Abuja.
+          </p>
+          <p class="text-warm mb-8 reveal reveal-delay-3">
+            Today, we've grown into a team of 15 skilled professionals, each dedicated to making you look and feel extraordinary. From bridal glam to everyday elegance, we bring expertise, premium products, and genuine care to every appointment.
+          </p>
+          
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-6 reveal reveal-delay-4">
+            <div class="text-center p-4 bg-white rounded-xl">
+              <p class="font-display text-3xl font-semibold text-champagne">6+</p>
+              <p class="text-sm text-warm">Years Experience</p>
+            </div>
+            <div class="text-center p-4 bg-white rounded-xl">
+              <p class="font-display text-3xl font-semibold text-champagne">15</p>
+              <p class="text-sm text-warm">Expert Stylists</p>
+            </div>
+            <div class="text-center p-4 bg-white rounded-xl">
+              <p class="font-display text-3xl font-semibold text-champagne">2.5K+</p>
+              <p class="text-sm text-warm">Happy Clients</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="decorative-line mx-auto mb-6 reveal"></div>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-mocha mb-4 reveal reveal-delay-1">
+          Our Services
+        </h2>
+        <p class="text-warm reveal reveal-delay-2">
+          From stunning hair transformations to flawless makeup, we offer a complete range of beauty services tailored to your unique style.
+        </p>
+      </div>
+      
+      <!-- Services Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Service 1 -->
+        <div class="service-card rounded-2xl p-8 reveal reveal-delay-1">
+          <div class="service-icon w-14 h-14 bg-champagne/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-mocha" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-medium text-mocha mb-3">Hair Styling</h3>
+          <p class="text-warm text-sm mb-4">Expert cuts, coloring, treatments, and styling for all hair types and textures.</p>
+          <p class="text-champagne font-medium text-sm">From N15,000</p>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="service-card rounded-2xl p-8 reveal reveal-delay-2">
+          <div class="service-icon w-14 h-14 bg-rose/20 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-mocha" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-medium text-mocha mb-3">Wig Installation</h3>
+          <p class="text-warm text-sm mb-4">Seamless installs, custom fittings, and maintenance for premium wig experiences.</p>
+          <p class="text-champagne font-medium text-sm">From N20,000</p>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="service-card rounded-2xl p-8 reveal reveal-delay-3">
+          <div class="service-icon w-14 h-14 bg-champagne/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-mocha" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-medium text-mocha mb-3">Makeup Artistry</h3>
+          <p class="text-warm text-sm mb-4">Bridal, editorial, and everyday looks crafted by certified makeup artists.</p>
+          <p class="text-champagne font-medium text-sm">From N25,000</p>
+        </div>
+        
+        <!-- Service 4 -->
+        <div class="service-card rounded-2xl p-8 reveal reveal-delay-4">
+          <div class="service-icon w-14 h-14 bg-rose/20 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-mocha" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-medium text-mocha mb-3">Skincare</h3>
+          <p class="text-warm text-sm mb-4">Facials, peels, and treatments designed to reveal your natural radiance.</p>
+          <p class="text-champagne font-medium text-sm">From N18,000</p>
+        </div>
+        
+        <!-- Service 5 -->
+        <div class="service-card rounded-2xl p-8 reveal reveal-delay-1">
+          <div class="service-icon w-14 h-14 bg-rose/20 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-mocha" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-medium text-mocha mb-3">Braiding</h3>
+          <p class="text-warm text-sm mb-4">Knotless, box braids, twists, and intricate styles with premium extensions.</p>
+          <p class="text-champagne font-medium text-sm">From N35,000</p>
+        </div>
+        
+        <!-- Service 6 -->
+        <div class="service-card rounded-2xl p-8 reveal reveal-delay-2">
+          <div class="service-icon w-14 h-14 bg-champagne/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-mocha" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-medium text-mocha mb-3">Nail Care</h3>
+          <p class="text-warm text-sm mb-4">Manicures, pedicures, acrylics, and nail art for polished perfection.</p>
+          <p class="text-champagne font-medium text-sm">From N8,000</p>
+        </div>
+        
+        <!-- Service 7 -->
+        <div class="service-card rounded-2xl p-8 reveal reveal-delay-3">
+          <div class="service-icon w-14 h-14 bg-rose/20 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-mocha" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-medium text-mocha mb-3">Bridal Packages</h3>
+          <p class="text-warm text-sm mb-4">Complete bridal beauty packages including trial, wedding day, and pre-wedding prep.</p>
+          <p class="text-champagne font-medium text-sm">From N150,000</p>
+        </div>
+        
+        <!-- Service 8 -->
+        <div class="service-card rounded-2xl p-8 reveal reveal-delay-4">
+          <div class="service-icon w-14 h-14 bg-champagne/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-mocha" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-medium text-mocha mb-3">Hair Treatments</h3>
+          <p class="text-warm text-sm mb-4">Keratin, deep conditioning, and restorative treatments for healthy hair.</p>
+          <p class="text-champagne font-medium text-sm">From N25,000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-24 bg-mocha">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="decorative-line mx-auto mb-6 reveal" style="background: linear-gradient(90deg, #C9A87C, #D4A5A5);"></div>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-white mb-4 reveal reveal-delay-1">
+          Our Work
+        </h2>
+        <p class="text-white/60 reveal reveal-delay-2">
+          A glimpse into the transformations we create every day. Every client leaves feeling more confident and beautiful.
+        </p>
+      </div>
+      
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-square reveal reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=400&q=80" alt="Hair styling result" class="w-full h-full object-cover" loading="lazy">
+          <div class="gallery-overlay flex items-end p-4">
+            <span class="text-white text-sm font-medium">Bridal Glam</span>
+          </div>
+        </div>
+        
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-square reveal reveal-delay-2">
+          <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&q=80" alt="Makeup look" class="w-full h-full object-cover" loading="lazy">
+          <div class="gallery-overlay flex items-end p-4">
+            <span class="text-white text-sm font-medium">Natural Glam</span>
+          </div>
+        </div>
+        
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-[1/1.3] row-span-2 reveal reveal-delay-3">
+          <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=400&q=80" alt="Hair styling" class="w-full h-full object-cover" loading="lazy">
+          <div class="gallery-overlay flex items-end p-4">
+            <span class="text-white text-sm font-medium">Color Treatment</span>
+          </div>
+        </div>
+        
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-square reveal reveal-delay-4">
+          <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&q=80" alt="Nail art" class="w-full h-full object-cover" loading="lazy">
+          <div class="gallery-overlay flex items-end p-4">
+            <span class="text-white text-sm font-medium">Nail Art</span>
+          </div>
+        </div>
+        
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-square reveal reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=400&q=80" alt="Wig installation" class="w-full h-full object-cover" loading="lazy">
+          <div class="gallery-overlay flex items-end p-4">
+            <span class="text-white text-sm font-medium">Wig Install</span>
+          </div>
+        </div>
+        
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-[1/1.3] row-span-2 reveal reveal-delay-2">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80" alt="Braiding" class="w-full h-full object-cover" loading="lazy">
+          <div class="gallery-overlay flex items-end p-4">
+            <span class="text-white text-sm font-medium">Braiding</span>
+          </div>
+        </div>
+        
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-square reveal reveal-delay-3">
+          <img src="https://images.unsplash.com/photo-1526045478516-99145907023c?w=400&q=80" alt="Skincare treatment" class="w-full h-full object-cover" loading="lazy">
+          <div class="gallery-overlay flex items-end p-4">
+            <span class="text-white text-sm font-medium">Facial Glow</span>
+          </div>
+        </div>
+        
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-square reveal reveal-delay-4">
+          <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=400&q=80" alt="Editorial makeup" class="w-full h-full object-cover" loading="lazy">
+          <div class="gallery-overlay flex items-end p-4">
+            <span class="text-white text-sm font-medium">Editorial</span>
+          </div>
+        </div>
+        
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-square reveal reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?w=400&q=80" alt="Hair coloring" class="w-full h-full object-cover" loading="lazy">
+          <div class="gallery-overlay flex items-end p-4">
+            <span class="text-white text-sm font-medium">Highlights</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- View More CTA -->
+      <div class="text-center mt-12 reveal">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-outline border-white/30 text-white hover:bg-white hover:text-mocha px-8 py-3 rounded-full inline-block transition-all">
+          View More on Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-24 bg-sand">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="decorative-line mx-auto mb-6 reveal"></div>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-mocha mb-4 reveal reveal-delay-1">
+          Pricing
+        </h2>
+        <p class="text-warm reveal reveal-delay-2">
+          Transparent pricing for all our services. We believe premium beauty should be accessible.
+        </p>
+      </div>
+      
+      <!-- Pricing Cards -->
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Basic Package -->
+        <div class="pricing-card rounded-2xl p-8 reveal reveal-delay-1">
+          <div class="mb-6">
+            <span class="text-sm text-warm font-medium">Starter</span>
+            <h3 class="font-display text-2xl font-medium text-mocha mt-1">Essential Beauty</h3>
+          </div>
+          <div class="mb-6">
+            <span class="font-display text-4xl font-semibold text-champagne">N45,000</span>
+            <span class="text-warm text-sm">/session</span>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3 text-charcoal">
+              <svg class="w-5 h-5 text-champagne flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Basic hair styling
+            </li>
+            <li class="flex items-center gap-3 text-charcoal">
+              <svg class="w-5 h-5 text-champagne flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Express manicure
+            </li>
+            <li class="flex items-center gap-3 text-charcoal">
+              <svg class="w-5 h-5 text-champagne flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Natural makeup look
+            </li>
+            <li class="flex items-center gap-3 text-warm/50">
+              <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+              Hair treatment
+            </li>
+          </ul>
+          <a href="#contact" class="btn-outline w-full py-3 rounded-full text-center block font-medium">
+            Book Now
+          </a>
+        </div>
+        
+        <!-- Featured Package -->
+        <div class="pricing-card pricing-featured rounded-2xl p-8 reveal reveal-delay-2 relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+            <span class="bg-champagne text-white text-xs font-medium px-4 py-1 rounded-full">Most Popular</span>
+          </div>
+          <div class="mb-6">
+            <span class="text-sm text-white/60 font-medium">Complete</span>
+            <h3 class="font-display text-2xl font-medium text-white mt-1">Glam Package</h3>
+          </div>
+          <div class="mb-6">
+            <span class="font-display text-4xl font-semibold text-champagne">N85,000</span>
+            <span class="text-white/60 text-sm">/session</span>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3 text-white/80">
+              <svg class="w-5 h-5 text-champagne flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Full hair styling
+            </li>
+            <li class="flex items-center gap-3 text-white/80">
+              <svg class="w-5 h-5 text-champagne flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Spa manicure & pedicure
+            </li>
+            <li class="flex items-center gap-3 text-white/80">
+              <svg class="w-5 h-5 text-champagne flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Full glam makeup
+            </li>
+            <li class="flex items-center gap-3 text-white/80">
+              <svg class="w-5 h-5 text-champagne flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Deep conditioning treatment
+            </li>
+          </ul>
+          <a href="#contact" class="btn-primary w-full py-3 rounded-full text-center block font-medium">
+            Book Now
+          </a>
+        </div>
+        
+        <!-- Premium Package -->
+        <div class="pricing-card rounded-2xl p-8 reveal reveal-delay-3">
+          <div class="mb-6">
+            <span class="text-sm text-warm font-medium">Luxury</span>
+            <h3 class="font-display text-2xl font-medium text-mocha mt-1">VIP Experience</h3>
+          </div>
+          <div class="mb-6">
+            <span class="font-display text-4xl font-semibold text-champagne">N150,000</span>
+            <span class="text-warm text-sm">/session</span>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3 text-charcoal">
+              <svg class="w-5 h-5 text-champagne flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Premium hair transformation
+            </li>
+            <li class="flex items-center gap-3 text-charcoal">
+              <svg class="w-5 h-5 text-champagne flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Luxury nail treatment
+            </li>
+            <li class="flex items-center gap-3 text-charcoal">
+              <svg class="w-5 h-5 text-champagne flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Editorial makeup + lashes
+            </li>
+            <li class="flex items-center gap-3 text-charcoal">
+              <svg class="w-5 h-5 text-champagne flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Premium facial treatment
+            </li>
+            <li class="flex items-center gap-3 text-charcoal">
+              <svg class="w-5 h-5 text-champagne flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Champagne & refreshments
+            </li>
+          </ul>
+          <a href="#contact" class="btn-outline w-full py-3 rounded-full text-center block font-medium">
+            Book Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-24 bg-cream overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="decorative-line mx-auto mb-6 reveal"></div>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-mocha mb-4 reveal reveal-delay-1">
+          Client Love
+        </h2>
+        <p class="text-warm reveal reveal-delay-2">
+          Don't just take our word for it. Here's what our clients have to say about their experience.
+        </p>
+      </div>
+      
+      <!-- Testimonials Grid -->
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card rounded-2xl p-8 reveal reveal-delay-1">
+          <div class="flex gap-1 mb-4">
+            <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-charcoal mb-6 italic">
+            "My bridal experience was absolutely magical. The team made me feel like a queen on my special day. The makeup lasted through tears and dancing!"
+          </p>
+          <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&h=80&fit=crop&crop=face" alt="Chidinma Okafor" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="font-medium text-mocha">Chidinma Okafor</p>
+              <p class="text-sm text-warm">Bride, December 2024</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card rounded-2xl p-8 reveal reveal-delay-2">
+          <div class="flex gap-1 mb-4">
+            <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-charcoal mb-6 italic">
+            "Best wig installation in Abuja, hands down. My unit looks so natural, people think it's my real hair. The attention to detail is unmatched."
+          </p>
+          <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt="Amaka Eze" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="font-medium text-mocha">Amaka Eze</p>
+              <p class="text-sm text-warm">Regular Client</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card rounded-2xl p-8 reveal reveal-delay-3">
+          <div class="flex gap-1 mb-4">
+            <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-charcoal mb-6 italic">
+            "The skincare treatments here transformed my skin. After years of acne struggles, I finally have clear, glowing skin. Worth every kobo!"
+          </p>
+          <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="Fatima Ibrahim" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="font-medium text-mocha">Fatima Ibrahim</p>
+              <p class="text-sm text-warm">Skincare Client</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 bg-sand">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <!-- Contact Info -->
+        <div>
+          <div class="decorative-line mb-6 reveal"></div>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-mocha mb-6 reveal reveal-delay-1">
+            Let's Get You<br>Booked
+          </h2>
+          <p class="text-warm mb-8 reveal reveal-delay-2">
+            Ready to transform? Book your appointment through WhatsApp for instant confirmation, or fill out the form and we'll get back to you within 2 hours.
+          </p>
+          
+          <!-- Contact Details -->
+          <div class="space-y-6 mb-8">
+            <div class="flex items-start gap-4 reveal reveal-delay-2">
+              <div class="w-12 h-12 bg-champagne/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-mocha">Location</h3>
+                <p class="text-warm">Plot 45, Ademola Adetokunbo Crescent,<br>Wuse 2, Abuja, Nigeria</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4 reveal reveal-delay-3">
+              <div class="w-12 h-12 bg-champagne/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-mocha">Working Hours</h3>
+                <p class="text-warm">Mon - Sat: 9:00 AM - 8:00 PM<br>Sunday: By appointment only</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4 reveal reveal-delay-4">
+              <div class="w-12 h-12 bg-champagne/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-mocha">Contact</h3>
+                <p class="text-warm">+234 812 345 6789<br>hello@beautyaddictabuja.com</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Social Links -->
+          <div class="flex gap-4 reveal reveal-delay-4">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-mocha rounded-xl flex items-center justify-center text-white hover:bg-champagne transition-colors" aria-label="Instagram">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/2348123456789" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-mocha rounded-xl flex items-center justify-center text-white hover:bg-champagne transition-colors" aria-label="WhatsApp">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-mocha rounded-xl flex items-center justify-center text-white hover:bg-champagne transition-colors" aria-label="TikTok">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+              </svg>
+            </a>
+          </div>
+          
+          <!-- WhatsApp CTA -->
+          <div class="mt-8 reveal reveal-delay-4">
+            <a href="https://wa.me/2348123456789?text=Hi!%20I'd%20like%20to%20book%20an%20appointment" target="_blank" rel="noopener noreferrer" class="btn-primary px-8 py-4 rounded-full inline-flex items-center gap-3 font-medium">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Book via WhatsApp
+            </a>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="reveal reveal-delay-2">
+          <form id="contactForm" class="bg-white rounded-2xl p-8 shadow-lg border border-warm/10">
+            <h3 class="font-display text-2xl font-medium text-mocha mb-6">Send us a message</h3>
+            
+            <div class="space-y-5">
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-mocha mb-2">Full Name</label>
+                  <input type="text" id="name" name="name" required class="form-input w-full px-4 py-3 rounded-xl" placeholder="Your name">
+                </div>
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-mocha mb-2">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" required class="form-input w-full px-4 py-3 rounded-xl" placeholder="+234 XXX XXX XXXX">
+                </div>
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-mocha mb-2">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input w-full px-4 py-3 rounded-xl" placeholder="your@email.com">
+              </div>
+              
+              <div>
+                <label for="service" class="block text-sm font-medium text-mocha mb-2">Service Interested In</label>
+                <select id="service" name="service" class="form-input w-full px-4 py-3 rounded-xl appearance-none cursor-pointer">
+                  <option value="">Select a service</option>
+                  <option value="hair-styling">Hair Styling</option>
+                  <option value="wig-installation">Wig Installation</option>
+                  <option value="makeup">Makeup Artistry</option>
+                  <option value="skincare">Skincare Treatment</option>
+                  <option value="braiding">Braiding</option>
+                  <option value="nails">Nail Care</option>
+                  <option value="bridal">Bridal Package</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium text-mocha mb-2">Message</label>
+                <textarea id="message" name="message" rows="4" class="form-input w-full px-4 py-3 rounded-xl resize-none" placeholder="Tell us about your desired look or any questions..."></textarea>
+              </div>
+              
+              <button type="submit" class="btn-primary w-full py-4 rounded-xl font-medium flex items-center justify-center gap-2">
+                <span>Send Message</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Map -->
+      <div class="mt-16 reveal">
+        <div class="rounded-2xl overflow-hidden h-80 bg-warm/10">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.384246967!2d7.4812!3d9.0820!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDQnNTUuMiJOIDfCsDI4JzUyLjMiRQ!5e0!3m2!1sen!2sng!4v1" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Beauty Addict Abuja Location"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-mocha py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <!-- Brand -->
+        <div class="md:col-span-2">
+          <a href="#" class="inline-block mb-4">
+            <span class="font-display text-2xl font-semibold text-white">Beauty Addict</span>
+            <span class="text-champagne text-sm font-medium tracking-widest uppercase ml-2">Abuja</span>
+          </a>
+          <p class="text-white/60 max-w-sm mb-6">
+            Abuja's premier destination for luxurious hair styling, makeup artistry, and skincare treatments. Where beauty meets elegance.
+          </p>
+          <div class="flex gap-3">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-champagne transition-colors" aria-label="Instagram">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://wa.me/2348123456789" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-champagne transition-colors" aria-label="WhatsApp">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-champagne transition-colors" aria-label="TikTok">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-display text-lg font-medium text-white mb-4">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="#services" class="text-white/60 hover:text-champagne transition-colors">Services</a></li>
+            <li><a href="#gallery" class="text-white/60 hover:text-champagne transition-colors">Gallery</a></li>
+            <li><a href="#pricing" class="text-white/60 hover:text-champagne transition-colors">Pricing</a></li>
+            <li><a href="#testimonials" class="text-white/60 hover:text-champagne transition-colors">Reviews</a></li>
+            <li><a href="#contact" class="text-white/60 hover:text-champagne transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Services -->
+        <div>
+          <h4 class="font-display text-lg font-medium text-white mb-4">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="#services" class="text-white/60 hover:text-champagne transition-colors">Hair Styling</a></li>
+            <li><a href="#services" class="text-white/60 hover:text-champagne transition-colors">Wig Installation</a></li>
+            <li><a href="#services" class="text-white/60 hover:text-champagne transition-colors">Makeup</a></li>
+            <li><a href="#services" class="text-white/60 hover:text-champagne transition-colors">Skincare</a></li>
+            <li><a href="#services" class="text-white/60 hover:text-champagne transition-colors">Bridal Packages</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-white/40 text-sm">
+          2026 Beauty Addict Abuja. All rights reserved.
+        </p>
+        <p class="text-white/40 text-sm">
+          Designed with love in Abuja
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize variables before use
+    const navbar = document.getElementById('navbar');
+    const menuBtn = document.getElementById('menuBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    const contactForm = document.getElementById('contactForm');
+    
+    // Navbar scroll effect
+    let lastScrollY = 0;
+    
+    function handleScroll() {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 50) {
+        navbar.classList.add('nav-scrolled');
+      } else {
+        navbar.classList.remove('nav-scrolled');
+      }
+      
+      lastScrollY = currentScrollY;
+    }
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Mobile menu functions
+    function openMenu() {
+      mobileMenu.classList.add('open');
+      menuOverlay.style.opacity = '1';
+      menuOverlay.style.pointerEvents = 'auto';
+      document.body.style.overflow = 'hidden';
+      menuBtn.setAttribute('aria-expanded', 'true');
+    }
+    
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      menuOverlay.style.opacity = '0';
+      menuOverlay.style.pointerEvents = 'none';
+      document.body.style.overflow = '';
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+    
+    menuBtn.addEventListener('click', openMenu);
+    closeMenuBtn.addEventListener('click', closeMenu);
+    menuOverlay.addEventListener('click', closeMenu);
+    
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMenu();
+      }
+    });
+    
+    // Scroll reveal animation
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.reveal').forEach(el => {
+      revealObserver.observe(el);
+    });
+    
+    // Form submission
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const name = formData.get('name');
+      const phone = formData.get('phone');
+      const email = formData.get('email');
+      const service = formData.get('service');
+      const message = formData.get('message');
+      
+      // Create WhatsApp message
+      let whatsappMessage = `Hi! I'd like to book an appointment.%0A%0A`;
+      whatsappMessage += `Name: ${encodeURIComponent(name)}%0A`;
+      whatsappMessage += `Phone: ${encodeURIComponent(phone)}%0A`;
+      if (email) whatsappMessage += `Email: ${encodeURIComponent(email)}%0A`;
+      if (service) whatsappMessage += `Service: ${encodeURIComponent(service)}%0A`;
+      if (message) whatsappMessage += `Message: ${encodeURIComponent(message)}`;
+      
+      // Open WhatsApp
+      window.open(`https://wa.me/2348123456789?text=${whatsappMessage}`, '_blank');
+      
+      // Reset form
+      this.reset();
+    });
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          const navHeight = navbar.offsetHeight;
+          const targetPosition = targetElement.offsetTop - navHeight;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Lazy load images that are below the fold
+    if ('loading' in HTMLImageElement.prototype) {
+      // Browser supports native lazy loading
+      document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        img.src = img.src;
+      });
+    } else {
+      // Fallback for browsers that don't support lazy loading
+      const lazyLoadObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src || img.src;
+            lazyLoadObserver.unobserve(img);
+          }
+        });
+      });
+      
+      document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        lazyLoadObserver.observe(img);
+      });
+    }
+    
+    // Add subtle parallax to hero decorative elements
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    
+    if (!prefersReducedMotion.matches) {
+      const floatElements = document.querySelectorAll('.float-element');
+      
+      document.addEventListener('mousemove', (e) => {
+        const x = (window.innerWidth / 2 - e.clientX) / 50;
+        const y = (window.innerHeight / 2 - e.clientY) / 50;
+        
+        floatElements.forEach(el => {
+          el.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      });
+    }
+  </script>
+</body>
+</html>
